@@ -5,40 +5,76 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.1rem !important;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background-color: #0d1116;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
-  font-size: 1rem !important;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
 }
 
 .main-container {
   position: relative;
   background-color: #0d1116;
-
 }
 
 a {
   text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 a:hover {
-  color: #5000ca;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  color: #8b5cf6;
 }
 
-p, a, h1, h2, h3, h4, h5, label, button {
-  color: white;
+p, a, h1, h2, h3, h4, h5, label, button, li, span {
+  color: #e6edf3;
   font-family: "Lato", sans-serif;
+}
+
+p {
+  text-align: left;
+  line-height: 1.8;
+  color: #c9d1d9;
+  margin: 0 0 1.1rem 0;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: left;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #f5f7fa;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.8rem;
 }
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  background-color: rgba(13, 17, 22, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
   button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: "Lato", sans-serif;
     text-transform: initial;
     padding: 6px 10px;
@@ -53,6 +89,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
   span, p {
     color: #0d1116;
     font-family: "Lato", sans-serif;
+    text-align: center;
   }
 }
 
@@ -67,12 +104,14 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .header-image {
   width: 100%;
-  height: 450px;
+  height: 420px;
+  overflow: hidden;
 
   img {
     width: 100%;
-    height: 450px;
+    height: 420px;
     object-fit: cover;
+    filter: brightness(0.78);
   }
 }
 
@@ -85,27 +124,63 @@ p, a, h1, h2, h3, h4, h5, label, button {
 }
 
 .items-container {
-  padding: 5% 10%;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 72px 0;
   text-align: left;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+}
+
+/* 统一内容宽度，形成稳定阅读轴线 */
+.items-container > * {
+  width: 100%;
+  max-width: 860px;
+}
+
+/* 段落不要再单独居中 */
+.items-container p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* section之间留白更自然 */
+section,
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section {
+  width: 100%;
+}
+
+/* 可选：给每个主要内容块一点分隔感 */
+.content-block {
+  padding: 28px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 18px;
 }
 
 .light-mode {
   background-color: #f8f9fa;
 
   .navigation-bar {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
 
-  p, a, h1, h2, h3, h4, h5, label, button {
+  p, a, h1, h2, h3, h4, h5, label, button, li, span {
     color: #0d1116;
   }
 
+  p {
+    color: #334155;
+  }
+
   a:hover {
-    color: #5000ca;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    color: #6d28d9;
   }
 
   .navigation-bar svg {
@@ -121,8 +196,8 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 
   .chip {
-    background-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    background-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08);
   }
 
   .vertical-timeline::before {
@@ -130,11 +205,11 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 
   .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
   }
 
   .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
-    color: gray;
+    color: #64748b;
   }
 
   .vertical-timeline-element-content-arrow {
@@ -144,12 +219,38 @@ p, a, h1, h2, h3, h4, h5, label, button {
   .flex-chips .chip-title {
     color: #0d1116;
   }
+
+  .content-block {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
 }
 
-@media screen {
-  @media (max-width: 768px) {
-    .items-container {
-      padding: 5% 5%;
-    }
+@media (max-width: 768px) {
+  .items-container {
+    width: min(100% - 32px, 100%);
+    padding: 48px 0;
+  }
+
+  .items-container > * {
+    max-width: 100%;
+  }
+
+  .header-image,
+  .header-image img {
+    height: 300px;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
   }
 }
