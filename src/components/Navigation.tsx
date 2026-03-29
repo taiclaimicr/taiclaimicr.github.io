@@ -21,9 +21,10 @@ const drawerWidth = 240;
 const navItems = [
   ['Home', 'home'],
   ['Groups', 'groups'],
-  ['Projects & People', 'projects-people'],
+  ['Projects', 'projects'],
   ['Vision', 'vision'],
   ['Project Strategy', 'project-strategy'],
+  ['People', 'people'],
   ['Contact', 'contact'],
 ];
 

@@ -1,21 +1,30 @@
 .footer {
+  padding: 28px 20px 40px;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
-  padding: 40px 20px;
-  margin-top: 60px;
-  color: #888;
-  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
 }
 
 .footer-title {
   font-weight: 600;
-  color: #222;
   margin-bottom: 8px;
+  text-align: center !important;
 }
 
-.footer-sub {
-  margin-bottom: 6px;
+.footer-subtitle {
+  font-size: 0.98rem;
+  opacity: 0.82;
+  margin-bottom: 8px;
+  text-align: center !important;
 }
 
-.footer-contact {
-  font-size: 0.85rem;
+.footer-meta {
+  font-size: 0.92rem;
+  opacity: 0.68;
+  text-align: center !important;
 }

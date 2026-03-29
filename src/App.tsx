@@ -3,6 +3,7 @@ import {
   Main,
   Expertise,
   Project,
+  People,
   Contact,
   Navigation,
   Footer,
@@ -13,14 +14,12 @@ import FadeIn from './components/FadeIn';
 import './index.scss';
 
 function App() {
-  const [mode, setMode] = useState<string>('dark');
+  const [mode, setMode] = useState<string>('light');
 
   const handleModeChange = () => {
-    if (mode === 'dark') {
-      setMode('light');
-    } else {
-      setMode('dark');
-    }
+    const newMode = mode === 'dark' ? 'light' : 'dark';
+    setMode(newMode);
+    localStorage.setItem('theme', newMode);
   };
 
   useEffect(() => {
@@ -32,11 +31,12 @@ function App() {
       <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
       <FadeIn transitionDuration={700}>
         <Main />
-<Expertise />
-<Project />
-<Vision />
-<ProjectStrategy />
-<Contact />
+        <Expertise />
+        <Project />
+        <Vision />
+        <ProjectStrategy />
+        <People />
+        <Contact />
       </FadeIn>
       <Footer />
     </div>

@@ -8,7 +8,7 @@ function Expertise() {
     return (
     <div className="expertise-container" id="groups">
         <div className="skills-container">
-            <h1>Groups</h1>
+            <h1 className="section-title">Groups</h1>
             <div className="skills-grid">
 
                 <div className="skill">
