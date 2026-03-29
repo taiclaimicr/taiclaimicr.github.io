@@ -1,0 +1,43 @@
+.contact-container {
+  text-align: center;
+  padding: 110px 20px 80px;
+}
+
+.contact-container h1 {
+  margin-bottom: 36px;
+}
+
+.contact-card {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  color: #222222;
+  text-decoration: none;
+}
+
+.contact-item svg {
+  font-size: 1.3rem;
+}
+
+.contact-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.contact-card a:hover {
+  color: #5000ca;
+}
